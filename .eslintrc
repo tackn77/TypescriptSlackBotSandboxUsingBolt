@@ -1,0 +1,55 @@
+{
+    "root": true,
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "project": "./tsconfig.json",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "node",
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "variable",
+                "types": [
+                    "boolean"
+                ],
+                "format": [
+                    "camelCase"
+                ],
+                "prefix": [
+                    "is",
+                    "should"
+                ]
+            },
+            {
+                "selector": "parameter",
+                "format": [
+                    "camelCase"
+                ]
+            },
+            {
+                "selector": "class",
+                "format": [
+                    "PascalCase"
+                ],
+                "custom": {
+                    "regex": "send|start|find",
+                    "match": false
+                }
+            }
+        ]
+    }
+}
